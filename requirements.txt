@@ -1,0 +1,10 @@
+flask==3.1.0
+flask-socketio==5.4.1
+flask-limiter==3.9.2
+flask-sqlalchemy==3.1.1
+flask-bcrypt==1.0.1
+flask-login==0.6.3
+gunicorn==23.0.0
+eventlet==0.37.0
+cryptography==42.0.8
+python-dotenv==1.0.1

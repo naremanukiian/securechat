@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureChat · Register</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrap">
+    <div class="brand">
+      <div class="brand-icon">⬡</div>
+      <h1>secure<span>chat</span></h1>
+      <p class="tagline">create your account</p>
+    </div>
+
+    <form method="POST" action="/register" autocomplete="off">
+      {% if error %}
+        <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="your_handle" required minlength="2" maxlength="32" autofocus />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="min 6 characters" required minlength="6" />
+      </div>
+
+      <div class="field">
+        <label for="confirm">Confirm Password</label>
+        <input id="confirm" name="confirm" type="password" placeholder="repeat password" required />
+      </div>
+
+      <button type="submit" class="btn-primary">Create account →</button>
+    </form>
+
+    <p class="auth-switch">Already have an account? <a href="/login">Sign in</a></p>
+  </div>
+</body>
+</html>

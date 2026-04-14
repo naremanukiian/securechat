@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureChat · Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body class="auth-page">
+  <div class="auth-wrap">
+    <div class="brand">
+      <div class="brand-icon">⬡</div>
+      <h1>secure<span>chat</span></h1>
+      <p class="tagline">encrypted · private · local network</p>
+    </div>
+
+    <form method="POST" action="/login" autocomplete="off">
+      {% if error %}
+        <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="your_handle" required autofocus />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" required />
+      </div>
+
+      <button type="submit" class="btn-primary">Sign in →</button>
+    </form>
+
+    <p class="auth-switch">No account? <a href="/register">Create one</a></p>
+  </div>
+</body>
+</html>
